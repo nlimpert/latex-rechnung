@@ -8,6 +8,10 @@
 \usepackage[ngerman]{babel}
 \usepackage{color}
 \usepackage[hidelinks]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
 \usepackage[german]{invoice}
 
@@ -61,7 +65,11 @@
 	\begin{letter}{\customerCompany \\ \customerName \\ 
 	\customerStreet \\ \customerZIP \ \customerCity}
 	
-			\includegraphics[width=0.15\textwidth]{logo.png}			
+			\begin{tikzpicture}
+			  \node [scale=3.5, font=\Large] {\textcolor{LimeGreen}{\textbf{$\mathcal{N}$}}};
+			  \node [scale=3.5, font=\Large, xshift=3.33mm] {\textcolor{lightgray}{\textbf{$\mathcal{L}$}}};
+			\end{tikzpicture}
+			\vspace{-1.6em}
 			\opening{\invoiceSalutation}
 			\invoiceText
 		    \begin{invoice}{Euro}{0}
